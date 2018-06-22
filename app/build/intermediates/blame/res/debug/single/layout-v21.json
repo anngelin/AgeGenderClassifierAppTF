@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\akharche\\Desktop\\VKR\\mobile3\\mobile\\tf_android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\akharche\\.android\\build-cache\\8529d44c0aacdbb05256eaa7e05dc8c5d6417859\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\akharche\\Desktop\\VKR\\mobile3\\mobile\\tf_android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\akharche\\.android\\build-cache\\8529d44c0aacdbb05256eaa7e05dc8c5d6417859\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\akharche\\Desktop\\VKR\\mobile3\\mobile\\tf_android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\akharche\\.android\\build-cache\\8529d44c0aacdbb05256eaa7e05dc8c5d6417859\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\akharche\\Desktop\\VKR\\mobile3\\mobile\\tf_android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\akharche\\.android\\build-cache\\8529d44c0aacdbb05256eaa7e05dc8c5d6417859\\output\\res\\layout-v21\\notification_action.xml"
+    }
+]

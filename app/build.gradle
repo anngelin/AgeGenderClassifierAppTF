@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "android.hse.com.tflite_faces"
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            moduleName "OpenCvDetectionLib"
+        }
+
+        // Remove this block.
+        jackOptions {
+            enabled true
+        }
+    }
+    sourceSets.main {
+        jni.srcDirs = []
+    }
+    /*task ndkBuild(type: Exec, description: 'Compile JNI source via NDK') {
+        commandLine '/Users/avsavchenko/Library/Android/sdk/ndk-bundle/ndk-build',
+                'NDK_PROJECT_PATH=build/intermediates/ndk',
+                'NDK_LIBS_OUT=src/main/libs',
+                'APP_BUILD_SCRIPT=src/main/jni/Android.mk',
+                'NDK_APPLICATION_MK=src/main/jni/Application.mk'
+    }
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn ndkBuild
+    }*/
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    aaptOptions {
+        noCompress "tflite"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    /*maven {
+        url 'https://google.bintray.com/tensorflow'
+    }*/
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:support-annotations:25.3.1'
+    compile 'com.android.support:support-v13:25.2.0'
+    //compile 'org.tensorflow:tensorflow-lite:+'
+    //compile project(':tensorflow-lite')
+    compile(name: 'libandroid_tensorflow_inference_java', ext: 'jar')
+    compile(name:'openCVLibrary341-release', ext:'aar')
+    compile(name: 'tflite-1.0', ext: 'aar')
+    testCompile 'junit:junit:4.12'
+    //compile project(':openCVLibrary341')
+}
